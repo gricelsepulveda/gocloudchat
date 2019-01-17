@@ -1,0 +1,115 @@
+body {
+  font-family: 'Poppins', 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+  //ANTIALIASING TRICKS
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  font-variant-ligatures: none;
+  -webkit-font-variant-ligatures: none;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
+  background: linear-gradient(135deg, $color-1 0%, $color-2 100%);
+  width: 100vw;
+  height: 100vh;
+}
+
+button, a {
+  &:focus, &:active{
+    outline: 0!important;
+  }
+}
+
+nav.gc-nav {
+  width: 100vw;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: $white;
+  padding: 10px 20px 10px 20px;
+  height: 120px;
+  @include shadow;
+  @media #{$sm}{
+    justify-content: center!important;
+    height: 80px;
+  }
+  img {
+    width: auto;
+    height: 80px;
+    @media #{$sm}{
+      height: 60px;
+    }
+  }
+  ul, li {
+    @include clean-list;
+    @include clean-webkit;
+    @include zero-soft;
+    li {
+      height: 50px;
+      font-size: 16px;
+      font-weight: 300;
+      color: $black;
+      @include animate;
+      background-color: darken($white, 3%);
+      border-radius: 25px;
+      box-sizing: border-box;
+      padding-left: 25px!important;
+      padding-right: 25px!important;
+      margin-right: 20px!important;
+      @media #{$sm}{
+        background-color: transparent;
+        color: $white;
+        font-size: 32px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+      &:last-of-type{
+        margin-right: 0px!important;
+      }
+      &:hover {
+        color: $color-1;
+      }
+      a {
+        color: inherit;
+        @include flex-row-center;
+        text-decoration: none;
+        i {
+          margin-right: 5px;
+          @media #{$sm}{
+            margin-right: 0px;
+          }
+        }
+      }
+      span {
+        color: inherit;
+        font-size: inherit;
+        font-weight: inherit;
+        @media #{$sm}{
+          display: none;
+        }
+      }
+    }
+  }
+  ul {
+    @media #{$sm}{
+      position: fixed;
+      top: 80px;
+      left: 0px;
+      width: 100vw;
+      background-color: rgba($white, 0.25);
+      justify-content: center!important;
+    }
+  }
+}
+
+#headerBox {
+  .theme-background-color {
+    background-color: $color-1!important;
+  }
+}
